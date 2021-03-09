@@ -1,4 +1,4 @@
-# logreg
+# ToDo Application - Frontend
 
 ## Project setup
 ```
