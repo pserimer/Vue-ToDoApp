@@ -5,5 +5,3 @@ This project is a simple to-do list application. In this project, you can create
 This project uses Fastify framework on backend, and Vue JS framework on frontend. The project also includes the dockerized version of the backend.
 
 In order to operate fast searching, a basic implementation for Solr (https://solr.apache.org/) is included in the project.
-
-*Dockerizing a NodeJS application source: https://nodejs.org/en/docs/guides/nodejs-docker-webapp/
