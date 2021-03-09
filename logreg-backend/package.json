@@ -1,0 +1,30 @@
+{
+  "name": "logreg-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "env-cmd -f ./config/dev.env nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "dotenv": "^8.2.0",
+    "fastify": "^3.1.1",
+    "fastify-cors": "^4.1.0",
+    "fastify-plugin": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.5",
+    "node": "^10.11.0",
+    "objection": "^2.2.2",
+    "pg": "^8.3.0",
+    "solr-client": "^0.6.0",
+    "solr-node": "^1.2.1"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0",
+    "nodemon": "^2.0.4"
+  }
+}

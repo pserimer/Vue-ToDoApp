@@ -1,0 +1,39 @@
+version: '3'
+services:
+  web:
+    image: nodejs
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    command:
+       ["./wait-for-it.sh", "db:5432", "--","npm", "run", "dev"]
+      
+    ports:
+      - "3000:3000"
+    volumes:
+      - /usr/src/app
+      - /usr/src/app/node_modules
+    
+    environment:
+      database: logreg
+      user: postgres
+      password: 
+      PORT: 3000
+      DATABASE_URL: postgres://postgres:@postgres:5432/logreg
+    
+    working_dir: /usr/src/app 
+  
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: logreg
+      POSTGRES_PASSWORD: 
+    ports: 
+      - "5432:5432"
+
+  migrate:
+    build: .
+    command:
+      ["./wait-for-it.sh", "db:5432","--","npx", "knex", "migrate:latest","--env","production"]
+   
